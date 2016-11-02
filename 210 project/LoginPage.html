@@ -1,0 +1,29 @@
+<html>
+
+<head>
+<title>Login</title>
+<link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+
+
+<h1>Login page</h1>
+<p>
+<input type="text" id="keyInput" placeholder="User ID"/>
+<br/>
+<input type="text" id="valueInput" placeholder="Password"/>
+</p>
+
+<h2>
+<button id="login_submit">Sign-in</button>
+
+<button id="create_account">Create Account</button>
+</h2>
+<script type="text/javascript">
+    document.getElementById("create_account").onclick = function () {
+        location.href = "CreateAccount.html";
+    };
+</script>
+
+</body>
+</html>

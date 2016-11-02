@@ -1,0 +1,203 @@
+  <!DOCTYPE html>
+  <html>
+
+  <head>
+    <title>Create Account</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+
+    <h1>Create Account</h1>
+
+    <div class="dropdown">
+
+      <button onclick="myFunction()" class="dropbtn">Select School - University of Rochester</button>
+      <div id="myDropdown" class="dropdown-content">
+        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+        <a href="#Nursing">School of Nursing</a>
+        <a href="#Medicine">School of Medicine and Dentistry</a>
+        <a href="#Simon">Simon Business School</a>
+        <a href="#Warner">Warner Graduate School of Education</a>
+        <a href="#Oral">Eastman Institute for Oral Health</a>
+        <a href="#Eastman">Eastman School of Music</a>
+        <a href="#Hajim">Hajim School of Engineering and Applied Sciences</a>
+        <a href="#Sciences">School of Arts and Sciences</a>
+      </div>
+    </div>
+
+    <form id="myForm" method="POST" action="welcome.html">
+      <input type="text" name="fname" placeholder="First name"style=""><br>
+      <input type="text" name="lname" placeholder="Last name"><br>
+      <input type="email" name="usremail" placeholder="Email"><br>
+      <input type="text" id="field_username" name="username" placeholder="Username"><br>
+      <input type="text" id="field_pwd1" name="pwd1" placeholder="Password"><br>
+      <input type="text" id="field_pwd2" name="pwd2"placeholder="Confirm Password"><br>
+      <button <button type="submit" class="pure-button pure-button-primary" id="create_a_account">Create Account</button>
+    </form>
+
+
+    <script type="text/javascript" src="myscripts.js">
+    function Validate() {
+      var password = document.getElementById("txtPassword").value;
+      var confirmPassword = document.getElementById("txtConfirmPassword").value;
+      if (password != confirmPassword) {
+        alert("Passwords do not match.");
+        return false;
+      }
+      return true;
+    }
+    </script>
+
+    <script type="text/javascript">
+    document.getElementById("create_a_account").onclick = function () {
+      location.href = "LoginPage.html";
+    };
+
+
+    return ok;
+  }
+
+  $(document).ready(function () {
+   $("#txtNewPassword, #txtConfirmPassword").keyup(checkPasswordMatch);
+ });
+
+  </script>
+
+  <script type="text/javascript">
+
+  document.addEventListener("DOMContentLoaded", function() {
+
+    // JavaScript form validation
+    // // source http://www.the-art-of-web.com/javascript/validate-password/#example7
+
+    var checkPassword = function(str)
+    {
+      var re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+      return re.test(str);
+    };
+
+    var checkForm = function(e)
+    {
+      if(this.username.value == "") {
+        alert("Error: Username cannot be blank!");
+        this.username.focus();
+        e.preventDefault(); // equivalent to return false
+        return;
+      }
+      if(this.pwd1.value != this.pwd2.value) {
+        alert("Error: Passwords don't match");
+        this.username.focus();
+        e.preventDefault(); // equivalent to return false
+        return;
+      }
+      if(this.pwd1.value == "")
+      {
+        alert("Error: Please enter a password");
+        this.username.focus();
+        e.preventDefault(); // equivalent to return false
+        return;
+      }
+      if(this.pwd2.value == "")
+      {
+        alert("Error: Please confirm password");
+        this.username.focus();
+        e.preventDefault(); // equivalent to return false
+        return;
+      }
+
+      alert("Account Created!");
+    };
+
+    var myForm = document.getElementById("myForm");
+    myForm.addEventListener("submit", checkForm, true);
+
+    // HTML5 form validation
+
+    var supports_input_validity = function()
+    {
+      var i = document.createElement("input");
+      return "setCustomValidity" in i;
+    }
+
+    if(supports_input_validity()) {
+      var usernameInput = document.getElementById("field_username");
+      usernameInput.setCustomValidity(usernameInput.title);
+
+      var pwd1Input = document.getElementById("field_pwd1");
+      pwd1Input.setCustomValidity(pwd1Input.title);
+
+      var pwd2Input = document.getElementById("field_pwd2");
+
+      // input key handlers
+
+      usernameInput.addEventListener("keyup", function() {
+        usernameInput.setCustomValidity(this.validity.patternMismatch ? usernameInput.title : "");
+      }, false);
+
+      pwd1Input.addEventListener("keyup", function() {
+        this.setCustomValidity(this.validity.patternMismatch ? pwd1Input.title : "");
+        if(this.checkValidity()) {
+          pwd2Input.pattern = this.value;
+          pwd2Input.setCustomValidity(pwd2Input.title);
+        } else {
+          pwd2Input.pattern = this.pattern;
+          pwd2Input.setCustomValidity("");
+        }
+      }, false);
+
+      pwd2Input.addEventListener("keyup", function() {
+        this.setCustomValidity(this.validity.patternMismatch ? pwd2Input.title : "");
+      }, false);
+
+    }
+
+  }, false);
+
+  </script>
+
+
+
+  <script>
+/* 
+source code for dropdown bar http://www.w3schools.com/howto/howto_js_dropdown.asp 
+When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+</script>
+
+
+
+
+
+</body>
+</html>
