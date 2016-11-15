@@ -1,4 +1,5 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
+ <!DOCTYPE html>
   <html>
 
   <head>
@@ -25,13 +26,13 @@
       </div>
     </div>
 
-    <form id="myForm" method="POST" action="welcome.html">
-      <input type="text" name="fname" placeholder="First name"style=""><br>
-      <input type="text" name="lname" placeholder="Last name"><br>
-      <input type="email" name="usremail" placeholder="Email"><br>
+    <form id="myForm" method="POST" action="/cgi-bin/create-database.py">
+      <input type="text" name="firstName" placeholder="First name"style=""><br>
+      <input type="text" name="lastName" placeholder="Last name"><br>
+      <input type="email" name="email" placeholder="Email"><br>
       <input type="text" id="field_username" name="username" placeholder="Username"><br>
-      <input type="text" id="field_pwd1" name="pwd1" placeholder="Password"><br>
-      <input type="text" id="field_pwd2" name="pwd2"placeholder="Confirm Password"><br>
+      <input type="password" id="field_pwd1" name="password" placeholder="Password"><br>
+      <input type="password" id="field_pwd2" name="pwd2" placeholder="Confirm Password"><br>
       <button <button type="submit" class="pure-button pure-button-primary" id="create_a_account">Create Account</button>
     </form>
 
@@ -200,4 +201,5 @@ function filterFunction() {
 
 
 </body>
+</html>
 </html>
