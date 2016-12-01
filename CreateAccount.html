@@ -1,5 +1,4 @@
-<!DOCTYPE html>
- <!DOCTYPE html>
+  <!DOCTYPE html>
   <html>
 
   <head>
@@ -26,13 +25,13 @@
       </div>
     </div>
 
-    <form id="myForm" method="POST" action="/cgi-bin/create-database.py">
-      <input type="text" name="firstName" placeholder="First name"style=""><br>
-      <input type="text" name="lastName" placeholder="Last name"><br>
-      <input type="email" name="email" placeholder="Email"><br>
+    <form id="myForm" method="POST" action="Home.html">
+      <input type="text" name="fname" placeholder="First name"style=""><br>
+      <input type="text" name="lname" placeholder="Last name"><br>
+      <input type="email" name="usremail" placeholder="Email"><br>
       <input type="text" id="field_username" name="username" placeholder="Username"><br>
-      <input type="password" id="field_pwd1" name="password" placeholder="Password"><br>
-      <input type="password" id="field_pwd2" name="pwd2" placeholder="Confirm Password"><br>
+      <input type="text" id="field_pwd1" name="pwd1" placeholder="Password"><br>
+      <input type="text" id="field_pwd2" name="pwd2"placeholder="Confirm Password"><br>
       <button <button type="submit" class="pure-button pure-button-primary" id="create_a_account">Create Account</button>
     </form>
 
@@ -180,26 +179,32 @@ window.onclick = function(event) {
     }
   }
 
+</script>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
 function filterFunction() {
-  var input, filter, ul, li, a, i;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  div = document.getElementById("myDropdown");
-  a = div.getElementsByTagName("a");
-  for (i = 0; i < a.length; i++) {
-    if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-      a[i].style.display = "";
-    } else {
-      a[i].style.display = "none";
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } else {
+            a[i].style.display = "none";
+        }
     }
-  }
 }
 </script>
 
 
 
-
-
 </body>
-</html>
 </html>
