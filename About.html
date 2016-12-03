@@ -13,30 +13,60 @@
 
 <ul>
   <li><a onclick="location.href = 'Home.html ' " href="#home">Home</a></li>
-  <li><a onclick="location.href = 'Courses.html ' " href="#courses">Courses</a></li>
-  <li><a onclick="location.href=' Reminders.html '" href="#reminders">Reminders</a></li>
+  <li><a onclick="location.href=' Groups.html '" href="#Groups">Groups</a></li>
   <li><a onclick="location.href=' About.html'" href="#Aboutus">About Us</a></li>
-  <li style="float:right"><a class="active" onclick="location.href=' Profile.html'" href="#about">My Profile</a></li>
+  <li class="dropdown" style="float:right" >
+    <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Menu</a>
+    <div class="dropdown-content" id="myDropdown">
+      <a onclick="location.href=' Profile.html'" href="#Profile">My Profile</a>
+      <a href="#">Logout</a>
+    </div>
+  </li>
+
+
 </ul>
 
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var d = 0; d < dropdowns.length; d++) {
+      var openDropdown = dropdowns[d];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+
 <header>
-   <h1>StudyBuddy</h1>
+ StudyBuddy
 </header>
 
- <button <button type="submit" class="pure-button pure-button-primary" id="current_groups">Current Groups</button>
-
-  <button <button type="submit" class="pure-button pure-button-primary" id="current_courses">Current Courses</button>
-
-
-
 <article>
-  <h1>London</h1>
-  <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
-  <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+  <h1>Description of the Awesome people in our Group!</h1>
+  <p>Cookie Monster</p>
+  <p>George wannabe Clooney</p>
+  <p>Mr Pancakes</p>
+  <p>Christan With the Guns</p>
+
 </article>
 
-
-<footer>CSC 210 Group 21</footer>
+<footer> Created by CSC 210 Group 21 
+<h3>
+Ahluwalia | Irankunda | Rossney | Williams
+</h3>
+</footer>
 
 </div>
 
