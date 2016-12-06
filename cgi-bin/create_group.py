@@ -8,10 +8,10 @@ import cgi
 
 
 def create_database():
-    conn = sqlite3.connect('users.db')
+    conn = sqlite3.connect('studygroups.db')
     cursor = conn.cursor()
-    
-    cursor.execute('CREATE TABLE IF NOT EXISTS users(firstName varchar(30),lastName varchar(30),email varchar(50), username varchar(30) primary key, password varchar(200), salt charchar(100))')
+
+    cursor.execute('CREATE TABLE IF NOT EXISTS studygroups(groupID int(30) primary key,lastName varchar(30),email varchar(50), password varchar(200), salt charchar(100))')
 
     conn.commit()
     conn.close()
@@ -33,13 +33,6 @@ def insert_user(firstName, lastName, email, username, password):
     conn.close()
 
 
-def print_users():
-    conn = sqlite3.connect('users.db')
-    cursor = conn.cursor()
-
-    for row in cursor.execute('SELECT * FROM users'):
-        print row
-
 cgitb.enable()
 
 form = cgi.FieldStorage()
@@ -59,22 +52,10 @@ password = form['password'].value
 
 def init_database():
     create_database()
-    insert_user(firstName,lastName,email,username,password)
+    insert_group(firstName,lastName,email,username,password)
 
 
 init_database()
-print '''<html>
-    <head>
-        <title>Profile</title>
-        <script type="text/javascript">
-        function profile() {
-            document.open();
-            window.location.href = "../Login.html";
-            document.close();
-        }
-        </script> 
-    </head>
-
-    <body onload="profile()">
-    </body>
-    <html>'''
+print '<h1>Welcome '+ lastName + '</h1>'
+print '	</body>'
+print '</html>'
