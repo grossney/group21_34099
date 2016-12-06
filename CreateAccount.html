@@ -4,8 +4,40 @@
   <head>
     <title>Create Account</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <script type="text/javascript">
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+  </script>
+
+
+  <script type="text/javascript">
+    function checkCookie() {
+    var user=getCookie("username");
+    if (user != "") {
+        document.open();
+        window.location.href = "Home.html";
+        Alert("Welcome" + username)
+        document.close();
+    }  
+  }
+</script>
   </head>
-  <body>
+
+  <body >
 
     <h1>Create Account</h1>
 
@@ -25,14 +57,14 @@
       </div>
     </div>
 
-    <form id="myForm" method="POST" action="Home.html">
-      <input type="text" name="fname" placeholder="First name"style=""><br>
-      <input type="text" name="lname" placeholder="Last name"><br>
-      <input type="email" name="usremail" placeholder="Email"><br>
+    <form id="myForm" method="POST">
+      <input type="text" name="firstName" placeholder="First name"style=""><br>
+      <input type="text" name="lastName" placeholder="Last name"><br>
+      <input type="email" name="email" placeholder="Email"><br>
       <input type="text" id="field_username" name="username" placeholder="Username"><br>
-      <input type="text" id="field_pwd1" name="pwd1" placeholder="Password"><br>
+      <input type="text" id="field_pwd1" name="password" placeholder="Password"><br>
       <input type="text" id="field_pwd2" name="pwd2"placeholder="Confirm Password"><br>
-      <button <button type="submit" class="pure-button pure-button-primary" id="create_a_account">Create Account</button>
+      <button <button type="submit" class="pure-button pure-button-primary" id="create_a_account" formaction= "/cgi-bin/create-database.py" >Create Account</button>
     </form>
 
 
@@ -104,8 +136,6 @@
         e.preventDefault(); // equivalent to return false
         return;
       }
-
-      alert("Account Created!");
     };
 
     var myForm = document.getElementById("myForm");
