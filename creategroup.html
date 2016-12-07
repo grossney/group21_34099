@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <html>
+  	<head>
+ 		<title> Create a Study Group </title>
+ 	</head>
+ 	<body>
+ 	
+ 	<h1> Create a Study Group</h1>
+ 	
+ 	<form method="get" action="/cgi-bin/creategroup.py">
+ 		School:
+ 		<select name="school">
+ 			<option value="School of Arts and Sciences">Arts and Sciences</option>
+ 			<option value="Hajim School of Engineering and Applied Sciences">Hajim</option>
+			 <option value="Nursing">Nursing</option>
+			 <option value="Medicine and Dentistry">Medicine and Denistry</option>
+			 <option value="Simon School of Business">Business</option>
+			 <option value="Warner Graduate School of Education">Warner</option>
+			 <option value="Eastman Institute for Oral Health">Oral</option>
+			 <option value="Eastman School of Music">Music</option>
+			 
+  		</select>
+  		<BR>
+  		<BR/>
+  		Course Name:<BR/>
+  		(Example: "Calculus I")
+  		<input type="text" name="CourseName" maxlength="15"><BR>
+  		<BR/>
+  		3-Digit Course Code:<BR/>
+  		(Example: "161")                
+  		<input type="text" name="CourseCode" maxlength="3"><BR>
+  		<BR/>
+  		Study Group Name:<BR/>
+  		<input type="text" name="GroupName" maxlength="10"><BR>
+  		</BR>
+
+  		<input type="submit" value= "Create Group"/>
+  	</form>
+
+  	</body>
+  	</html>
+
