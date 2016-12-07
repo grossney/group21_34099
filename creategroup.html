@@ -7,7 +7,7 @@
  	
  	<h1> Create a Study Group</h1>
  	
- 	<form method="get" action="/cgi-bin/creategroup.py">
+ 	<form method="get" action="/Desktop/checkform/GroupScript.py">
  		School:
  		<select name="school">
  			<option value="School of Arts and Sciences">Arts and Sciences</option>
@@ -21,6 +21,10 @@
 			 
   		</select>
   		<BR>
+      <BR/>
+      Department Code:<BR/>
+      (Example: Math is MTH)
+      <input type="text" name="DeptCode" maxlength="3"><BR>
   		<BR/>
   		Course Name:<BR/>
   		(Example: "Calculus I")
@@ -31,12 +35,12 @@
   		<input type="text" name="CourseCode" maxlength="3"><BR>
   		<BR/>
   		Study Group Name:<BR/>
-  		<input type="text" name="GroupName" maxlength="10"><BR>
+  		<input type="text" name="GroupName" maxlength="15"><BR>
   		</BR>
 
   		<input type="submit" value= "Create Group"/>
   	</form>
 
-  	</body>
+  	   </body>
   	</html>
 
