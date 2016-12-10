@@ -51,6 +51,42 @@
 
    </script>
 
+ 	<h2> Create a Study Group</h2>
+ 	
+ 	<form method="get" action="/Desktop/checkform/GroupScript.py">
+ 		School:
+ 		<select name="school">
+ 			<option value="School of Arts and Sciences">Arts and Sciences</option>
+ 			<option value="Hajim School of Engineering and Applied Sciences">Hajim</option>
+			 <option value="Nursing">Nursing</option>
+			 <option value="Medicine and Dentistry">Medicine and Denistry</option>
+			 <option value="Simon School of Business">Business</option>
+			 <option value="Warner Graduate School of Education">Warner</option>
+			 <option value="Eastman Institute for Oral Health">Oral</option>
+			 <option value="Eastman School of Music">Music</option>
+			 
+  		</select>
+  		<BR>
+      <BR/>
+      Department Code:<BR/>
+      (Example: Math is MTH)
+      <input type="text" name="DeptCode" maxlength="3"><BR>
+  		<BR/>
+  		Course Name:<BR/>
+  		(Example: "Calculus I")
+  		<input type="text" name="CourseName" maxlength="15"><BR>
+  		<BR/>
+  		3-Digit Course Code:<BR/>
+  		(Example: "161")                
+  		<input type="text" name="CourseCode" maxlength="3"><BR>
+  		<BR/>
+  		Study Group Name:<BR/>
+  		<input type="text" name="GroupName" maxlength="15"><BR>
+  		</BR>
+
+  		<input type="submit" value= "Create Group"/>
+  	</form>
+
 <?php 
   $username = "database-username";
   $password = "database-password";
@@ -92,44 +128,6 @@
      <?php mysql_close($connector); 
      ?>
 
-<!--
-<table id= "table" align="center">
-  <tr> 
-    <th>Group Name</th>
-     <th>Course Name </th>
-    <th>Course Code </th>
-   
-  </tr>
-  <tr>
-    <td>Mathematic dudes</td>
-    <td>MTH 165</td>
-    <td>839393</td>
-  </tr>
-  <tr>
-    <td>Compsci people </td>
-    <td>CSC 210</td>
-    <td>720322</td>
-  </tr>
-  <tr>
-    <td>Chemistry Minds</td>
-    <td>CHM 101</td>
-    <td>202003</td>
-  </tr>
-  <tr>
-    <td>Physics move</td>
-    <td>PHY 101</td>
-    <td>303033</td>
-  </tr>
-
-</table>
-
-<article>
-  <h1></h1>
-  <p></p>
-  <p></p>
-</article>
-
---> 
 <footer>StudyBuddy</footer>
 
 </div>
