@@ -4,7 +4,6 @@
    <title>StudyBuddy</title>
        <link rel="stylesheet" type="text/css" href="stylesHome.css" />
 <style>
-
 </style>
 </head>
 <body>
@@ -31,24 +30,16 @@
     document.getElementById("current_courses").onclick = function () {
      document.getElementById('dataTable').style.display="none";
     };
-
-
     return ok;
   }
-
-
    </script>
 
 <script type="text/javascript">
     document.getElementById("current_groups").onclick = function () {
      document.getElementById('dataTable').style.display="block";
     };
-
-
     return ok;
   }
-
-
    </script>
 
  	<h2> Create a Study Group</h2>
@@ -70,18 +61,18 @@
       <BR/>
       Department Code:<BR/>
       (Example: Math is MTH)
-      <input type="text" name="DeptCode" maxlength="3"><BR>
+      <input type="text" name="GroupName" maxlength="3"><BR>
   		<BR/>
   		Course Name:<BR/>
   		(Example: "Calculus I")
-  		<input type="text" name="CourseName" maxlength="15"><BR>
+  		<input type="text" name="courseID" maxlength="15"><BR>
   		<BR/>
   		3-Digit Course Code:<BR/>
   		(Example: "161")                
-  		<input type="text" name="CourseCode" maxlength="3"><BR>
+  		<input type="text" name="CourseName" maxlength="3"><BR>
   		<BR/>
   		Study Group Name:<BR/>
-  		<input type="text" name="GroupName" maxlength="15"><BR>
+  		<input type="text" name="GroupID" maxlength="15"><BR>
   		</BR>
 
   		<input type="submit" value= "Create Group"/>
@@ -134,4 +125,3 @@
 
 </body>
 </html>
-
