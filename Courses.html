@@ -63,18 +63,14 @@
       (Example: Math is MTH)
       <input type="text" name="GroupName" maxlength="3"><BR>
   		<BR/>
-  		Course Name:<BR/>
-  		(Example: "Calculus I")
+  		Course ID:<BR/>
+  		(Example: "161")
   		<input type="text" name="courseID" maxlength="15"><BR>
   		<BR/>
-  		3-Digit Course Code:<BR/>
-  		(Example: "161")                
+  		Course Name:<BR/>
+  		(Example: "Calculus I")                
   		<input type="text" name="CourseName" maxlength="3"><BR>
   		<BR/>
-  		Study Group Name:<BR/>
-  		<input type="text" name="GroupID" maxlength="15"><BR>
-  		</BR>
-
   		<input type="submit" value= "Create Group"/>
   	</form>
 
@@ -93,7 +89,7 @@
       //execute the SQL query and return records
       $result = mysql_query("SELECT * FROM table_one ");
       ?>
-      <table border="2" style= "background-color: #84ed86; color: #761a9b; margin: 0 auto;" >
+      <table border="2" style= "background-color: #ffffff; color: #761a9b; margin: 0 auto;" >
       <thead>
         <tr>
           <th>GroupName</th>
