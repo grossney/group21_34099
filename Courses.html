@@ -51,6 +51,47 @@
 
    </script>
 
+<?php 
+  $username = "database-usernmae";
+  $password = "database-password";
+  $host = "localhost";
+
+  $connector = mysql_connect($host,$username,$password)
+      or die("Unable to connect");
+    echo "Connection made";
+    $selected = mysql_select_db("groups", $connector)
+      or die("Can't connect");
+
+
+      //execute the SQL query and return records
+      $result = mysql_query("SELECT * FROM table_one ");
+      ?>
+      <table border="2" style= "background-color: #84ed86; color: #761a9b; margin: 0 auto;" >
+      <thead>
+        <tr>
+          <th>GroupName</th>
+          <th>CourseID</th>
+          <th>CourseName</th>
+          <td>GroupID</td>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+          while( $row = mysql_fetch_assoc( $result ) ){
+            echo
+            "<tr>
+              <td>{$row\['GroupName'\]}</td>
+              <td>{$row\['CourseID'\]}</td>
+              <td>{$row\['CourseName'\]}</td>
+              <td>{$row\['GroupID'\]}</td>
+            </tr>\n";
+          }
+        ?>
+      </tbody>
+    </table>
+     <?php mysql_close($connector); ?>
+
+<!--
 <table id= "table" align="center">
   <tr> 
     <th>Group Name</th>
@@ -82,13 +123,13 @@
 </table>
 
 <article>
-  <h1>London</h1>
-  <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
-  <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+  <h1></h1>
+  <p></p>
+  <p></p>
 </article>
 
-
-<footer>CSC 210 Group 21</footer>
+--> 
+<footer>StudyBuddy</footer>
 
 </div>
 

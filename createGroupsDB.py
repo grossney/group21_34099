@@ -37,8 +37,8 @@ print ' <body>'
 
 groupID=form['groupID'].value
 groupName= form['groupName'].value
-courseID form['courseID'].value
-courseName = form['courseName'].value
+courseID= form['courseID'].value
+courseName= form['courseName'].value
 
 
 def init_database():
@@ -51,8 +51,8 @@ print '<h1>Welcome '+ lastName + '</h1>'
 print ' </body>'
 print '</html>'
 
-    conn.commit()
-    conn.close()
+conn.commit()
+conn.close()
 
 
 def insert_group(groupID, groupName, courseID, courseName):
@@ -85,7 +85,7 @@ print ' <body>'
 
 groupID=form['groupID'].value
 groupName= form['groupName'].value
-courseID form['courseID'].value
+courseID= form['courseID'].value
 courseName = form['courseName'].value
 
 
