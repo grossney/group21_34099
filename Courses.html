@@ -59,11 +59,10 @@
   		</select>
   		<BR>
       <BR/>
-      Department Code:<BR/>
-      (Example: Math is MTH)
+      Group Name:<BR/>
       <input type="text" name="GroupName" maxlength="3"><BR>
   		<BR/>
-  		Course ID:<BR/>
+  		Course ID (3 digits):<BR/>
   		(Example: "161")
   		<input type="text" name="courseID" maxlength="15"><BR>
   		<BR/>
@@ -95,7 +94,7 @@
           <th>GroupName</th>
           <th>CourseID</th>
           <th>CourseName</th>
-          <td>GroupID</td>
+          <td>GroupID</td> 
         </tr>
       </thead>
       <tbody>
@@ -107,7 +106,7 @@
               <td>{$row\['CourseID'\]}</td>
               <td>{$row\['CourseName'\]}</td>
               <td>{$row\['GroupID'\]}</td>
-            </tr>\n";
+            </tr>\
           }
         ?>
       </tbody>
