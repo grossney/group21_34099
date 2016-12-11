@@ -1,4 +1,4 @@
-##Database for creating study groups
+#!C:\Python27\python.exe
 import sqlite3
 import hashlib
 import datetime
