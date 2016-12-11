@@ -2,30 +2,49 @@
 #!/usr/bin/env python 
 
 import sqlite3
-
-conn = sqlite3.connect('groups.db')
-
-c = conn.cursor()
-
-c.execute('DROP TABLE IF EXISTS groups')
-
-c.execute('CREATE TABLE IF NOT EXISTS groups(groupName varchar(30), courseID varchar(30), courseName varchar(50), groupID varchar(30) primary key');
-
-c.execute('INSERT INTO groups VALUES("MathKids","123", "Geometry", "01")') 
+import hashlib
+import datetime
+import cgitb
+import cgi
 
 
-conn.commit()
+def create_database():
+    conn = sqlite3.connect('groups.db')
+    cursor = conn.cursor()
 
-conn.close()
+    cursor.execute('CREATE TABLE IF NOT EXISTS groups(groupID INTEGER PRIMARY KEY  AUTOINCREMENT ,GroupName varchar(30),CourseID varchar(50), CourseName varchar(200)')
+
+    conn.commit()
+    conn.close()
+
+
+def insert_group(GroupName, CourseID, CourseName):
+
+    conn = sqlite3.connect('group.db')
+    cursor = conn.cursor()
+    cursor.execute("INSERT INTO groups VALUES(?,?,?);", (GroupName, CourseID, CourseName))
+
+    conn.commit()
+    conn.close()
+
+
+cgitb.enable()
+
+form = cgi.FieldStorage()
 
 
 print 'Content-Type: text/html'
-print
-print '''<html>
-	<head>
-		<title>Created Study Groups Database</title>
-	</head>
-		Groups database created! 
-	</body>
-</html>'''
+print ''
+print '<html>'
+print ' <body>'
 
+GroupName=form['GroupName'].value
+CourseID= form['CourseID'].value
+CourseName= form['CourseName'].value
+
+def init_database():
+    create_database()
+    insert_group(GroupName,CourseID,CourseName)
+
+
+init_database()
