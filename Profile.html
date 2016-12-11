@@ -12,14 +12,14 @@
 <div class="container">
 
 <ul>
-  <li><a onclick="location.href = 'Home.html ' " href="#home">Home</a></li>
-  <li><a onclick="location.href=' Groups.html '" href="#Groups">Groups</a></li>
+  <li><a onclick="location.href=' Groups.html '" href="#Groups">Home</a></li>
+  <li><a onclick="location.href = 'CreateGroup.html ' " href="#home">Create Group</a></li>
   <li><a onclick="location.href=' About.html'" href="#Aboutus">About Us</a></li>
   <li class="dropdown" style="float:right" >
     <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Menu</a>
     <div class="dropdown-content" id="myDropdown">
       <a onclick="location.href=' Profile.html'" href="#Profile">My Profile</a>
-      <a onclick = "logout()" href="#">Logout</a>
+      <a href="#">Logout</a>
     </div>
   </li>
 
@@ -69,27 +69,22 @@ function myLookup() {
     }       
   }
 }
-
-function logout(){
-    window.location.href = "Index.html";
-    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-    }
 </script>
 
 
 <img class="img" src="images/profile.png" alt="Mountain View" style="width:200px;height:200px;"  >
 
 
-<form id="myForm" method="POST">
-      <input type="text" name="firstName" placeholder="First name"style=""><br>
-      <input type="text" name="lastName" placeholder="Last name"><br>
-      <input type="email" name="email" placeholder="Email"><br>
-      <input type="text" id="username" name="username" placeholder="Username"><br>
-      <input type="text" id="field_pwd1" name="password" placeholder="Password"><br>
-      <input type="text" id="field_pwd2" name="pwd2" placeholder="Confirm Password"><br>
-      <button type="submit" class="pure-button pure-button-primary" id="save" formaction= "/cgi-bin/edit_profile.py" >Save Changes</button>
+<form id="myForm" method="POST" action="Home.html">
+      <input type="text" name="fname" placeholder="First name"style=""><br>
+      <input type="text" name="lname" placeholder="Last name"><br>
+      <input type="email" name="usremail" placeholder="Email"><br>
+      <input type="text" id="field_username" name="username" placeholder="Username"><br>
+      <input type="text" id="field_pwd1" name="pwd1" placeholder="Password"><br>
+      <input type="text" id="field_pwd2" name="pwd2"placeholder="Confirm Password"><br>
+      <button <button type="submit" class="pure-button pure-button-primary" id="save" >Save Changes</button>
     </br>
-    <button type="submit" class="pure-button pure-button-primary button1" id="Delete" formaction="/cgi-bin/delete_profile.py" onlclick= " logout()" >Delete Account</button>
+    <button <button type="submit" class="pure-button pure-button-primary button1" id="Delete" >Delete Account</button>
     </form>
 
 
