@@ -42,40 +42,11 @@
   }
    </script>
 
- 	<h2> Create a Study Group</h2>
- 	
- 	<form method="get" action="/cgi-bin/create_group.py">
- 		School:
- 		<select name="school">
- 			<option value="School of Arts and Sciences">Arts and Sciences</option>
- 			<option value="Hajim School of Engineering and Applied Sciences">Hajim</option>
-			 <option value="Nursing">Nursing</option>
-			 <option value="Medicine and Dentistry">Medicine and Denistry</option>
-			 <option value="Simon School of Business">Business</option>
-			 <option value="Warner Graduate School of Education">Warner</option>
-			 <option value="Eastman Institute for Oral Health">Oral</option>
-			 <option value="Eastman School of Music">Music</option>
-			 
-  		</select>
-  		<BR>
-      <BR/>
-      Group Name:<BR/>
-      <input type="text" name="GroupName" maxlength="3"><BR>
-  		<BR/>
-  		Course ID (3 digits):<BR/>
-  		(Example: "161")
-  		<input type="text" name="courseID" maxlength="15"><BR>
-  		<BR/>
-  		Course Name:<BR/>
-  		(Example: "Calculus I")                
-  		<input type="text" name="CourseName" maxlength="3"><BR>
-  		<BR/>
-  		<input type="submit" value= "Create Group"/>
-  	</form>
-
+Study Groups: 
+	
 <?php 
-  $username = "database-username";
-  $password = "database-password";
+  $groupID = "database-groupID";
+  $groupName = "database-groupName";
   $host = "localhost";
 
   $connector = mysql_connect($host,$username,$password)
