@@ -1,33 +1,27 @@
 #!C:\Python27\python.exe
-
+######this is the Windows version (for Claude) 
 import sqlite3
-import hashlib
 import datetime
 import cgitb
 import cgi
 
 
 def create_database():
-    conn = sqlite3.connect('studygroups.db')
+    conn = sqlite3.connect('groups.db')
     cursor = conn.cursor()
 
-    cursor.execute('CREATE TABLE IF NOT EXISTS studygroups(groupID int(30) primary key,lastName varchar(30),email varchar(50), password varchar(200), salt charchar(100))')
+      cursor.execute('CREATE TABLE IF NOT EXISTS groups(groupID INTEGER PRIMARY KEY  AUTOINCREMENT 
+                     ,GroupName varchar(30),CourseID varchar(50), CourseName varchar(200)')
 
     conn.commit()
     conn.close()
 
 
-def insert_user(firstName, lastName, email, username, password):
-    salt = str(datetime.datetime.now())
+def insert_user(groupID,groupName, courseID, CourseName):
 
-    hasher = hashlib.md5()
-    hasher.update(password)
-    hasher.update(salt)
-    encrypted = hasher.hexdigest()
-
-    conn = sqlite3.connect('users.db')
+    conn = sqlite3.connect('groups.db')
     cursor = conn.cursor()
-    cursor.execute("INSERT INTO users VALUES(?,?,?,?,?,?);", (firstName, lastName, email, username, encrypted, salt))
+    cursor.execute("INSERT INTO users VALUES(?,?,?,?);", (groupID,groupName, courseID, CourseName))
 
     conn.commit()
     conn.close()
@@ -43,19 +37,15 @@ print ''
 print '<html>'
 print ' <body>'
 
-firstName=form['firstName'].value
-lastName= form['lastName'].value
-email= form['email'].value
-username = form['username'].value
-password = form['password'].value
-
+groupName=form['groupName'].value
+courseID= form['courseID'].value
+courseName= form['courseName'].value
 
 def init_database():
     create_database()
-    insert_group(firstName,lastName,email,username,password)
-
+    insert_group(groupID,groupName, courseID, CourseName)
 
 init_database()
-print '<h1>Welcome '+ lastName + '</h1>'
+print '<h1>Now viewing '+ groupName + '</h1>'
 print '	</body>'
 print '</html>'
