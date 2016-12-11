@@ -1,5 +1,4 @@
 #!C:\Python27\python.exe
-######this is the Windows version (for Claude) 
 import sqlite3
 import datetime
 import cgitb
