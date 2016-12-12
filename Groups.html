@@ -18,7 +18,7 @@
   <li class="dropdown" style="float:right" >
     <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Menu</a>
     <div class="dropdown-content" id="myDropdown">
-      <a onclick="location.href=' Profile.html'" href="#Profile">My Profile</a>
+      <a onclick="location.href='Profile.html'" href="#Profile">My Profile</a>
       <a href="#">Logout</a>
     </div>
   </li>
@@ -56,43 +56,123 @@ window.onclick = function(e) {
 <div class="container-4">
     <input type="text" id="search" onkeyup="myLookup()" placeholder="Search..." />
 </div>
+<br>
+Use the table below to join existing StudyBuddy groups <br>
+for large courses in the College of Arts and Sciences. 
+</br>
 
-
-<table id= "table" >
+<table id= "table">
   <tr> 
     
  <table id="myTable" align="center">
   <tr class="header">
     <th style="width:50%;">Group Name</th>
-     <th style="width:30%;">Course Name </th>
-    <th style="width:20%;">Course Code </th>
+     <th style="width:30%;">Course Name</th>
+    <th style="width:20%;">Course Code</th>
+    <th style="width:20%;">Join Group(s)</th>
   </tr>
   <tr>
-    <td>Mathematic dudes</td>
-    <td>MTH 165</td>
-    <td>839393</td>
+    <td>Brain and Cognitive Science Group</td>
+    <td>BCS</td>
+    <td>110</td>
+    <td> <input type="checkbox" name="query_myTextEditBox" style="text-align:center; vertical-align: middle;"></td>
   </tr>
   <tr>
-    <td>Compsci people </td>
-    <td>CSC 210</td>
-    <td>720322</td>
+    <td>Hard Bio Class Group</td>
+    <td>BIO</td>
+    <td>110</td>
+        <td> <input type="checkbox" name="query_myTextEditBox" style="text-align:center; vertical-align: middle;"></td>
   </tr>
   <tr>
-    <td>Chemistry Minds</td>
-    <td>CHM 101</td>
-    <td>202003</td>
+    <td>Harder Bio Class Group</td>
+    <td>BIO</td>
+    <td>112</td>
+        <td> <input type="checkbox" name="query_myTextEditBox" style="text-align:center; vertical-align: middle;"></td>
   </tr>
   <tr>
-    <td>Physics move</td>
-    <td>PHY 101</td>
-    <td>303033</td>
+    <td>Chem Club</td>
+    <td>CHM</td>
+    <td>131</td>
+        <td> <input type="checkbox" name="query_myTextEditBox" style="text-align:center; vertical-align: middle;"></td>
   </tr>
-
+   <tr>
+    <td>Phython People</td>
+    <td>CSC</td>
+    <td>161</td>
+        <td> <input type="checkbox" name="query_myTextEditBox" style="text-align:center; vertical-align: middle;"></td>
+  </tr>
+   <tr>
+    <td>Java Jocks</td>
+    <td>CSC</td>
+    <td>171</td>
+        <td> <input type="checkbox" name="query_myTextEditBox" style="text-align:center; vertical-align: middle;"></td>
+  </tr>
+   <tr>
+    <td>Principles of Econ Group</td>
+    <td>ECO</td>
+    <td>108</td>
+        <td> <input type="checkbox" name="query_myTextEditBox" style="text-align:center; vertical-align: middle;"></td>
+  </tr>
+   <tr>
+    <td>Calculus I</td>
+    <td>MTH</td>
+    <td>141</td>
+        <td> <input type="checkbox" name="query_myTextEditBox" style="text-align:center; vertical-align: middle;"></td>
+  </tr>
+   <tr>
+    <td>Calculuus II</td>
+    <td>MTH</td>
+    <td>142</td>
+        <td> <input type="checkbox" name="query_myTextEditBox" style="text-align:center; vertical-align: middle;"></td>
+  </tr>
+   <tr>
+    <td>Harder Calculus I</td>
+    <td>MTH</td>
+    <td>161</td>
+        <td> <input type="checkbox" name="query_myTextEditBox" style="text-align:center; vertical-align: middle;"></td>
+  </tr>
+   <tr>
+    <td>Harder Calculus II</td>
+    <td>MTH</td>
+    <td>162</td>
+        <td> <input type="checkbox" name="query_myTextEditBox" style="text-align:center; vertical-align: middle;"></td>
+  </tr>
+   <tr>
+    <td>Earth Study Group</td>
+    <td>EES</td>
+    <td>101</td>
+        <td> <input type="checkbox" name="query_myTextEditBox" style="text-align:center; vertical-align: middle;"></td>
+  </tr>
+   <tr>
+    <td>Physics Fun</td>
+    <td>PHY</td>
+    <td>111</td>
+        <td> <input type="checkbox" name="query_myTextEditBox" style="text-align:center; vertical-align: middle;"></td>
+  </tr>
+     <tr>
+    <td>Political People</td>
+    <td>PSC</td>
+    <td>101</td>
+        <td> <input type="checkbox" name="query_myTextEditBox" style="text-align:center; vertical-align: middle;"></td>
+  </tr>
+     <tr>
+    <td>Stats Group</td>
+    <td>STT</td>
+    <td>212</td>
+        <td> <input type="checkbox" name="query_myTextEditBox" style="text-align:center; vertical-align: middle;"></td>
+  </tr>
+     <tr>
+    <td>Writers</td>
+    <td>WRT</td>
+    <td>105</td>
+        <td> <input type="checkbox" name="query_myTextEditBox" style="text-align:center; vertical-align: middle;"></td>
+  </tr>
 </table>
 
+<button onclick="location.href='Profile.html'">Save Changes</button>
+ 
 
-   <script>
-
+<script>
 function myLookup() {
   var input, filter, table, tr, td, i;
   input = document.getElementById("search");
@@ -111,6 +191,7 @@ function myLookup() {
   }
 }
 </script>
+
 
 <footer> Created by CSC 210 Group 21 
 <h3>
