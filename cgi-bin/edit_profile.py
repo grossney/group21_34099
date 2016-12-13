@@ -54,8 +54,7 @@ print '''<html>
         <title>Profile</title>
         <script type="text/javascript">
         function logout(){
-            window.location.href = "../Index.html";
-            document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+            window.location.href = "../Groups.html";
         }
         </script> 
     </head>

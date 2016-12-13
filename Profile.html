@@ -75,16 +75,16 @@ function myLookup() {
 <img class="img" src="img/profile.png" alt="Mountain View" style="width:200px;height:200px;"  >
 
 
-<form id="myForm" method="POST" action="Groups.html">
-      <input type="text" name="fname" placeholder="First name"style=""><br>
-      <input type="text" name="lname" placeholder="Last name"><br>
-      <input type="email" name="usremail" placeholder="Email"><br>
+<form id="myForm" method="POST">
+      <input type="text" name="firstName" placeholder="First name"style=""><br>
+      <input type="text" name="lastName" placeholder="Last name"><br>
+      <input type="email" name="email" placeholder="Email"><br>
       <input type="text" id="field_username" name="username" placeholder="Username"><br>
-      <input type="password" id="field_pwd1" name="pwd1" placeholder="Password"><br>
-      <input type="password" id="field_pwd2" name="pwd2"placeholder="Confirm Password"><br>
-      <button <button type="submit" class="pure-button pure-button-primary" id="save" >Save Changes</button>
+      <input type="text" id="field_pwd1" name="password" placeholder="Password"><br>
+      <input type="text" id="field_pwd2" name="pwd2" placeholder="Confirm Password"><br>
+      <button <button type="submit" class="pure-button pure-button-primary" id="save" formaction= "/cgi-bin/edit_profile.py">Save Changes</button>
     </br>
-    <button <button type="submit" class="pure-button pure-button-primary button1" id="Delete" >Delete Account</button>
+    <button <button type="submit" class="pure-button pure-button-primary button1" id="Delete" formaction="/cgi-bin/delete_profile.py" onlclick= " logout()">Delete Account</button>
     </form>
 
 

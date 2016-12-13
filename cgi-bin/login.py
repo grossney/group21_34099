@@ -50,7 +50,7 @@ if authenticate(username, password):
         <script type="text/javascript">
         function profile() {
             document.open();
-            window.location.href = "../Home.html";
+            window.location.href = "../Groups.html";
             document.close();
         }
         </script> 

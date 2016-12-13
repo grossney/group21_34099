@@ -21,10 +21,37 @@
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
+    <script type="text/javascript">
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function checkCookie() {
+            var username=getCookie("username");
+            if (username!="") {
+                window.location.href = "Groups.html";
+                document.getElementById("mydiv").innerHTML = "Welcome again " +usermane;
+            }  
+}
+        
+</script>
+
 
 </head>
 
-<body>
+<body onload="checkCookie()">
 
     <a name="about"></a>
     <div class="intro-header">

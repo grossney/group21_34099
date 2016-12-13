@@ -8,20 +8,20 @@ import cgi
 
 
 def create_database():
-    conn = sqlite3.connect('groups.db')
+    conn = sqlite3.connect('joinedGroup.db')
     cursor = conn.cursor()
 
-    cursor.execute('CREATE TABLE IF NOT EXISTS groups(GroupName varchar(30) primary key, CourseID varchar(50), CourseName varchar(200))')
+    cursor.execute('CREATE TABLE IF NOT EXISTS groups(GroupName varchar(30) primary key, username varchar(30))')
 
     conn.commit()
     conn.close()
 
 
-def insert_group(GroupName, CourseID, CourseName):
+def insert_group(GroupName, username):
 
-    conn = sqlite3.connect('groups.db')
+    conn = sqlite3.connect('joinedGroup.db')
     cursor = conn.cursor()
-    cursor.execute("INSERT INTO groups VALUES(?,?,?);", (GroupName, CourseID, CourseName))
+    cursor.execute("INSERT INTO joinedGroup VALUES(?,?,?);", (GroupName, username))
 
     conn.commit()
     conn.close()
@@ -37,13 +37,13 @@ print ''
 print '<html>'
 print ' <body>'
 
+
+var username= document.getElementsByName("username");
 GroupName=form['GroupName'].value
-CourseID= form['CourseID'].value
-CourseName= form['CourseName'].value
 
 def init_database():
     create_database()
-    insert_group(GroupName,CourseID,CourseName)
+    insert_group(GroupName, username)
 
 
 init_database()

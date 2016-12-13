@@ -4,8 +4,39 @@
   <head>
     <title>Create Account</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <script type="text/javascript">
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+  </script>
+
+
+  <script type="text/javascript">
+    function checkCookie() {
+    var user=getCookie("username");
+    if (user != "") {
+        document.open();
+        window.location.href = "Groups.html";
+        Alert("Welcome" + username)
+        document.close();
+    }  
+  }
+</script>
   </head>
-  <body>
+  <body onload="checkCookie()">
 
     <h1>Create Account</h1>
  
@@ -70,17 +101,14 @@
     </dl>
     <span id="result"></span>
 
-
-
-
-    <form id="myForm" method="POST" action="Groups.html">
-      <input type="text" id="field_fname" name="fname" placeholder="First name"style=""><br>
-      <input type="text" id="field_lname" name="lname" placeholder="Last name"><br>
-      <input type="email" id="field_email" name="useremail" placeholder="Email"><br>
+    <form id="myForm" method="POST" action="Login.html">
+      <input type="text" id="field_fname" name="firstName" placeholder="First name"style=""><br>
+      <input type="text" id="field_lname" name="lastName" placeholder="Last name"><br>
+      <input type="email" id="field_email" name="email" placeholder="Email"><br>
       <input type="text" id="field_username" name="username" placeholder="Username"><br>
-      <input type="password" id="field_pwd1" name="pwd1" placeholder="Password"><br>
+      <input type="password" id="field_pwd1" name="password" placeholder="Password"><br>
       <input type="password" id="field_pwd2" name="pwd2"placeholder="Confirm Password"><br>
-      <button <button type="submit" class="pure-button pure-button-primary" id="create_a_account">Create Account</button>
+      <button <button type="submit" class="pure-button pure-button-primary" id="create_a_account" formaction= "/cgi-bin/create-database.py" >Create Account</button>
     </form>
 
 
@@ -98,7 +126,7 @@
 
     <script type="text/javascript">
     document.getElementById("create_a_account").onclick = function () {
-      location.href = "LoginPage.html";
+      location.href = "Login.html";
     };
 
 
@@ -171,7 +199,6 @@
         return;
       }
 
-      alert("Account Created!");
     };
 
     var myForm = document.getElementById("myForm");

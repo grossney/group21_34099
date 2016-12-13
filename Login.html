@@ -31,7 +31,7 @@
 		function checkCookie() {
    			var username=getCookie("username");
     		if (username!="") {
-       			window.location.href = "Home.html";
+       			window.location.href = "Groups.html";
         		document.getElementById("mydiv").innerHTML = "Welcome again";
     		} else {
     			username = document.getElementById("LoginForm").elements[0].value;
@@ -46,7 +46,7 @@
 <body onload="checkCookie()">
 
 
-<h1>Login page</h1>
+<h1>Login into StuddyBuddy</h1>
 
  
 
@@ -55,7 +55,7 @@
 <p>
 <input type="text" id="keyInput" name="username" placeholder="User ID"/>
 <br>
-<input type="text" id="valueInput" name="password" placeholder="Password"/>
+<input type="password" id="valueInput" name="password" placeholder="Password"/>
 <br>
 
 </p>

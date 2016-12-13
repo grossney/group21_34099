@@ -1,25 +1,53 @@
 <!DOCTYPE html>
 <html>
+<meta charset="utf-8">
+  
 <head>
-   <title>StudyBuddy</title>
        <link rel="stylesheet" type="text/css" href="stylesHome.css" />
 <style>
-
 </style>
+
+<script>
+function showGroups(str) {
+  if (str=="") {
+    document.getElementById("txtHint").innerHTML="";
+    return;
+  } 
+  if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  } else { // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("txtHint").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("GET","getgroups.php?q="+str,true);
+  xmlhttp.send();
+}
+</script>
 </head>
-<body>
+
+
+
+<body onload="showGroups()">
 
 <div class="container">
 
 <ul>
+	<div id="mydiv"></div>
   <li><a onclick="location.href=' Groups.html '" href="#Groups">Home</a></li>
   <li><a onclick="location.href = 'CreateGroup.html ' " href="#home">Create Group</a></li>
   <li><a onclick="location.href=' About.html'" href="#Aboutus">About Us</a></li>
   <li class="dropdown" style="float:right" >
     <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Menu</a>
     <div class="dropdown-content" id="myDropdown">
-      <a onclick="location.href='Profile.html'" href="#Profile">My Profile</a>
-      <a href="#">Logout</a>
+      <a onclick="location.href=' Profile.html'" href="#Profile">My Profile</a>
+      <a onclick = "logout()" href="index.html">Logout</a>
+
+       
     </div>
   </li>
 
@@ -46,31 +74,66 @@ window.onclick = function(e) {
     }
   }
 }
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var d = 0; d < dropdowns.length; d++) {
+      var openDropdown = dropdowns[d];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+function myLookup() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("search");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1]; // change the 1 to a 0 to search group names 
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+
+function logout(){
+    window.location.href = "Index.html";
+    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    }
 </script>
-
-
-<header>
-   StudyBuddy
-</header>
 
 <div class="container-4">
     <input type="text" id="search" onkeyup="myLookup()" placeholder="Search..." />
 </div>
 <br>
+<table id= "table">
+  <tr>    
+  <div id="txtHint"> </div>
 <h1>Use the table below to join existing StudyBuddy groups <br>
    for large courses in the College of Arts and Sciences.</h1> 
-</br>
-
-<table id= "table">
-  <tr> 
-    
- <table id="myTable" align="center">
+  <table id="myTable" align="center">
   <tr class="header">
     <th style="width:50%;">Group Name</th>
      <th style="width:30%;">Course Name</th>
     <th style="width:20%;">Course Code</th>
     <th style="width:20%;">Join Group(s)</th>
   </tr>
+  <br>
+
   <tr>
     <td>Brain and Cognitive Science Group</td>
     <td>BCS</td>
@@ -169,7 +232,7 @@ window.onclick = function(e) {
   </tr>
 </table>
 
-<button onclick="location.href='Groups.html'">Save Changes</button>
+<button formaction="/cgi-bin/joinGroup.py">Save Changes</button>
  
 
 <script>
