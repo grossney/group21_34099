@@ -6,6 +6,13 @@
 <style>
 
 </style>
+<script type="text/javascript">
+  
+  function logout(){
+    window.location.href = "Index.html";
+    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+    }
+</script>
 </head>
 <body>
 
@@ -19,7 +26,7 @@
     <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Menu</a>
     <div class="dropdown-content" id="myDropdown">
       <a onclick="location.href=' Profile.html'" href="#Profile">My Profile</a>
-      <a href="#">Logout</a>
+      <a onclick = "logout()" href="index.html">Logout</a>
     </div>
   </li>
 
